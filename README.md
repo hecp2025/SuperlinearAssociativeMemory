@@ -129,6 +129,13 @@ Expected runtime (normal desktop)
 
 --interval: logging / evaluation interval (implementation-defined)
 
+## How to run on your own data
+
+Prepare your dataset in the format expected by the code.
+
+Add a new dataset option (or replace the MNIST loader) in the dataset-loading part of multilayer.py.
+
+Run with --dataset <your_dataset_name> and adjust --dimension, --binary, and other flags accordingly.
 
 ## Citation
 
