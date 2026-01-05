@@ -1,4 +1,5 @@
 # SuperlinearAssociativeMemory
+
 Codebase for hardware-adaptive learning in memristor-based associative memory with a multilayer structure.
 
 This repository accompanies the paper:
@@ -30,6 +31,25 @@ Typical layout:
 
 ---
 
+## System requirements
+
+### Operating systems
+- Linux / Windows / macOS (recommended: Linux for best reproducibility)
+
+### Software dependencies
+- Python >= 3.9
+- Key Python packages are listed in `requirements.txt` (see below)
+
+### Tested on
+- Please fill in with your actual environment once confirmed, e.g.:
+  - Ubuntu 22.04, Python 3.10, torch 2.x, torchvision 0.x
+
+### Non-standard hardware
+- No non-standard hardware is required.
+- (Optional) A CUDA-capable GPU can speed up experiments but is not required.
+
+---
+
 ## Installation
 
 ```bash
@@ -44,9 +64,9 @@ source .venv/bin/activate
 
 pip install -r requirements.txt
 ```
+Typical install time (normal desktop): ~5–20 minutes (mostly depends on network speed and installing PyTorch).
 
----
-## Installation
+Demo: run on the provided setting (MNIST)
 ## Train
 ```bash
 python multilayer.py \
@@ -62,9 +82,7 @@ python multilayer.py \
   --max-pattern 64 \
   --min-pattern 1
 ```
----
-## Evaluate
-```bash
+Evaluate
 python multilayer.py \
   --dimension 784 \
   --interval 1 \
@@ -77,10 +95,19 @@ python multilayer.py \
   --binary True \
   --max-pattern 64 \
   --min-pattern 1
-```
----
-## Key CLI arguments (summary)
-```bash
+
+Expected output
+
+The script prints progress and evaluation metrics to the console (e.g., recall accuracy / capacity-related metrics).
+
+If the code saves figures/results, specify the output path here (e.g., ./results/).
+
+Expected runtime (normal desktop)
+
+(Fill in after one run) e.g., max-pattern=64 typically completes in ~1–5 minutes on CPU.
+
+Key CLI arguments (summary)
+
 --dimension: input dimension (MNIST flattened is 784)
 
 --train-eval: 'train' or 'eval'
@@ -100,7 +127,7 @@ python multilayer.py \
 --seed: random seed for reproducibility
 
 --interval: logging / evaluation interval (implementation-defined)
-```
+
 
 ## Citation
 
